@@ -12,7 +12,8 @@
         id="thought"
         name="thought"
         placeholder="Type your thought"
-      />
+        [value]="thought.content"
+      /><!--[] it's a property binding, to get something from the component.ts-->
 
       <label for="author">Author</label>
       <input
@@ -21,6 +22,7 @@
         id="author"
         name="author"
         placeholder="Type the author or font"
+        [value]="thought.authorship"
       />
 
       <label for="modelo">Select the model card:</label>
@@ -40,8 +42,9 @@
               src="../../../../assets/images/modelo1.png"
               alt="clear blue quote"
             />
-            <p class="conteudo">Here is the content</p>
-            <p class="autoria"><b>Here is the author</b></p>
+            <!--{{ }} it's a property binding, to get something from component but showing inside a tag-->
+            <p class="conteudo">{{ thought.content }}</p>
+            <p class="autoria"><b>{{ thought.authorship }}</b></p>
           </div>
         </div>
 
@@ -57,8 +60,8 @@
           Preview:
           <div class="modelo model2 ff-roboto-mono">
             <img src="../../../../assets/images/modelo2.png" alt="blue quote" />
-            <p class="conteudo">Here is the content</p>
-            <p class="autoria"><b>Here is the author</b></p>
+            <p class="conteudo">{{ thought.content }}</p>
+            <p class="autoria"><b>{{ thought.authorship }}</b></p>
           </div>
         </div>
 
@@ -77,8 +80,8 @@
               src="../../../../assets/images/modelo3.png"
               alt="green quote"
             />
-            <p class="conteudo">Here is the content</p>
-            <p class="autoria"><b>Here is the author</b></p>
+            <p class="conteudo">{{ thought.content }}</p>
+            <p class="autoria"><b>{{ thought.authorship }}</b></p>
           </div>
         </div>
       </div>
@@ -87,7 +90,6 @@
         <button class="botao">Salvar</button>
         <button class="botao">Cancelar</button>
       </div>
-
     </form>
   </header>
 </section>
