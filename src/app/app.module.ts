@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { CreateThoughtsComponent } from './component/create-thoughts/create-thoughts.component';
+import { FormsModule } from '@angular/forms';
+import { ThoughtListComponent } from './component/thought/thought-list/thought-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CreateThoughtsComponent
+    CreateThoughtsComponent,
+    ThoughtListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

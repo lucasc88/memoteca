@@ -11,10 +11,18 @@ export class CreateThoughtsComponent implements OnInit {
     id: '1',
     content: 'Learning Angular',
     authorship: 'Dev',
-    model: '',
+    model: 'model1',
   };
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  createThought(){
+
+  }
+
+  cancelThought(){
+
+  }
 }

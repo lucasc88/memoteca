@@ -12,8 +12,9 @@
         id="thought"
         name="thought"
         placeholder="Type your thought"
-        [value]="thought.content"
-      /><!--[] it's a property binding, to get something from the component.ts-->
+        [(ngModel)]="thought.content"
+      /><!--[] it's a property binding, to get something from the component.ts, one way-->
+      <!--[(ngModel)] it's a property binding, to get and set something from the component.ts , two way-->
 
       <label for="author">Author</label>
       <input
@@ -22,14 +23,14 @@
         id="author"
         name="author"
         placeholder="Type the author or font"
-        [value]="thought.authorship"
+        [(ngModel)]="thought.authorship"
       />
 
       <label for="modelo">Select the model card:</label>
       <div class="container-radio">
         <div class="radio-modelo">
           <label for="model1">
-            <input type="radio" id="model1" value="model1" name="modelo-card" />
+            <input type="radio" id="model1" value="model1" name="modelo-card" [(ngModel)]="thought.model"/>
             <div class="custom-radio">
               <span></span>
             </div>
@@ -50,7 +51,7 @@
 
         <div class="radio-modelo">
           <label for="model2">
-            <input type="radio" id="model2" value="model2" name="modelo-card" />
+            <input type="radio" id="model2" value="model2" name="modelo-card"  [(ngModel)]="thought.model"/>
             <div class="custom-radio">
               <span></span>
             </div>
@@ -67,7 +68,7 @@
 
         <div class="radio-modelo">
           <label for="model3">
-            <input type="radio" id="model3" value="model3" name="modelo-card" />
+            <input type="radio" id="model3" value="model3" name="modelo-card"  [(ngModel)]="thought.model"/>
             <div class="custom-radio">
               <span></span>
             </div>
@@ -87,9 +88,10 @@
       </div>
 
       <div class="acoes">
-        <button class="botao">Salvar</button>
-        <button class="botao">Cancelar</button>
+        <button (click)="createThought()"  class="botao">Salvar</button>
+        <button (click)="cancelThought()" class="botao">Cancelar</button>
       </div>
+
     </form>
   </header>
 </section>
