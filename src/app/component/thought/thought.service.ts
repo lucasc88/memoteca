@@ -7,16 +7,25 @@ import { Thought } from './thought';
   providedIn: 'root',
 })
 export class ThoughtService {
-
   private readonly API = 'http://localhost:3000/';
 
   constructor(private http: HttpClient) {}
 
-  getThoughs(){
+  getThoughs() {
     return this.http.get<Thought[]>(this.API + 'thoughts');
   }
 
   create(thought: Thought): Observable<Thought> {
     return this.http.post<Thought>(this.API + 'thoughts', thought);
+  }
+
+  remove(id: number): Observable<Thought> {
+    const url = `${this.API}thoughts/${id}`;
+    return this.http.delete<Thought>(url);
+  }
+
+  findById(id: number): Observable<Thought> {
+    const url = `${this.API}thoughts/${id}`;
+    return this.http.get<Thought>(url);
   }
 }
