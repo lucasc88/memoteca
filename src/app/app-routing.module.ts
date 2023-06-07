@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CreateThoughtsComponent } from './component/create-thoughts/create-thoughts.component';
 import { ThoughtListComponent } from './component/thought/thought-list/thought-list.component';
+import { CreateThoughtsComponent } from './component/thought/create/create-thoughts.component';
 
 const routes: Routes = [
   {

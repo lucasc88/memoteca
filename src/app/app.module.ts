@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { CreateThoughtsComponent } from './component/create-thoughts/create-thoughts.component';
 import { FormsModule } from '@angular/forms';
 import { ThoughtListComponent } from './component/thought/thought-list/thought-list.component';
+import { CreateThoughtsComponent } from './component/thought/create/create-thoughts.component';
+import { ThoughtComponent } from './component/thought/thought/thought.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ThoughtListComponent } from './component/thought/thought-list/thought-l
     HeaderComponent,
     FooterComponent,
     CreateThoughtsComponent,
-    ThoughtListComponent
+    ThoughtListComponent,
+    ThoughtComponent
   ],
   imports: [
     BrowserModule,
