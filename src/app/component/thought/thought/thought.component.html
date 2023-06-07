@@ -6,7 +6,7 @@
     <b>{{ thought.authorship }}</b>
   </p>
   <div class="acoes">
-    <button class="botao-editar">
+    <button class="botao-editar" routerLink="/thought/editThought/{{thought.id}}">
       <img src="/assets/images/icone-editar.png" alt="Edit Icon" />
     </button>
     <button class="botao-excluir" routerLink="/thought/removeThought/{{thought.id}}">

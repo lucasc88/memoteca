@@ -11,6 +11,7 @@ import { CreateThoughtsComponent } from './component/thought/create/create-thoug
 import { ThoughtComponent } from './component/thought/thought/thought.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RemoveThoughtComponent } from './component/thought/remove-thought/remove-thought.component';
+import { EditThoughtComponent } from './component/thought/edit-thought/edit-thought.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RemoveThoughtComponent } from './component/thought/remove-thought/remov
     CreateThoughtsComponent,
     ThoughtListComponent,
     ThoughtComponent,
-    RemoveThoughtComponent
+    RemoveThoughtComponent,
+    EditThoughtComponent
   ],
   imports: [
     BrowserModule,

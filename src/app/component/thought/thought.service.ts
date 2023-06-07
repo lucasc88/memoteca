@@ -19,6 +19,11 @@ export class ThoughtService {
     return this.http.post<Thought>(this.API + 'thoughts', thought);
   }
 
+  edit(thought: Thought): Observable<Thought> {
+    const url = `${this.API}thoughts/${thought.id}`;
+    return this.http.put<Thought>(url, thought);
+  }
+
   remove(id: number): Observable<Thought> {
     const url = `${this.API}thoughts/${id}`;
     return this.http.delete<Thought>(url);
