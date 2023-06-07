@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-thought',
   templateUrl: './thought.component.html',
-  styleUrls: ['./thought.component.scss']
+  styleUrls: ['./thought.component.scss'],
 })
 export class ThoughtComponent implements OnInit {
 
-  constructor() { }
+  @Input() thought = {
+    content: 'Angular is pretty cool',
+    authorship: 'Lucas',
+    model: 'modelo3',
+  };
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }
