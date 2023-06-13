@@ -1,7 +1,8 @@
-import { ThoughtService } from './../thought.service';
 import { Component, OnInit } from '@angular/core';
-import { Thought } from '../thought';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Thought } from '../thought';
+import { ThoughtService } from './../thought.service';
 
 @Component({
   selector: 'app-create-thoughts',
@@ -10,21 +11,24 @@ import { Router } from '@angular/router';
 })
 export class CreateThoughtsComponent implements OnInit {
 
-  thought: Thought = {
-    content: '',
-    authorship: '',
-    model: '',
-  };
+  form!: FormGroup;
 
   constructor(
     private thoughtService: ThoughtService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      content: ['Reactive Form'],
+      authorship: ['Lucas'],
+      model: ['model1']
+    })
+  }
 
   createThought(){
-    this.thoughtService.create(this.thought).subscribe(() => {
+    this.thoughtService.create(this.form.value).subscribe(() => {
       this.router.navigate(['/listThoughts']);
     });
   }

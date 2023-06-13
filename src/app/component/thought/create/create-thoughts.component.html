@@ -4,33 +4,28 @@
       Add a <br />
       New Thought:
     </h2>
-    <form>
+    <form [formGroup]="form">
       <label for="thought">Thought</label>
       <input
         type="textarea"
         class="input"
         id="thought"
-        name="thought"
-        placeholder="Type your thought"
-        [(ngModel)]="thought.content"
-      /><!--[] it's a property binding, to get something from the component.ts, one way-->
-      <!--[(ngModel)] it's a property binding, to get and set something from the component.ts , two way-->
+        formControlName="content"
+        placeholder="Type your thought"/>
 
       <label for="author">Author</label>
       <input
         type="textarea"
         class="input"
         id="author"
-        name="author"
-        placeholder="Type the author or font"
-        [(ngModel)]="thought.authorship"
-      />
+        formControlName="authorship"
+        placeholder="Type the author or font"/>
 
       <label for="modelo">Select the model card:</label>
       <div class="container-radio">
         <div class="radio-modelo">
           <label for="model1">
-            <input type="radio" id="model1" value="model1" name="modelo-card" [(ngModel)]="thought.model"/>
+            <input type="radio" id="model1" value="model1" formControlName="model"/>
             <div class="custom-radio">
               <span></span>
             </div>
@@ -44,14 +39,14 @@
               alt="clear blue quote"
             />
             <!--{{ }} it's a property binding, to get something from component but showing inside a tag-->
-            <p class="conteudo">{{ thought.content }}</p>
-            <p class="autoria"><b>{{ thought.authorship }}</b></p>
+            <p class="conteudo">{{ form.get('content')?.value }}</p>
+            <p class="autoria"><b>{{ form.get('authorship')?.value }}</b></p>
           </div>
         </div>
 
         <div class="radio-modelo">
           <label for="model2">
-            <input type="radio" id="model2" value="model2" name="modelo-card"  [(ngModel)]="thought.model"/>
+            <input type="radio" id="model2" value="model2" formControlName="model"/>
             <div class="custom-radio">
               <span></span>
             </div>
@@ -61,14 +56,14 @@
           Preview:
           <div class="modelo model2 ff-roboto-mono">
             <img src="../../../../assets/images/model2.png" alt="blue quote" />
-            <p class="conteudo">{{ thought.content }}</p>
-            <p class="autoria"><b>{{ thought.authorship }}</b></p>
+            <p class="conteudo">{{ form.get('content')?.value }}</p>
+            <p class="autoria"><b>{{ form.get('authorship')?.value }}</b></p>
           </div>
         </div>
 
         <div class="radio-modelo">
           <label for="model3">
-            <input type="radio" id="model3" value="model3" name="modelo-card"  [(ngModel)]="thought.model"/>
+            <input type="radio" id="model3" value="model3" formControlName="model" />
             <div class="custom-radio">
               <span></span>
             </div>
@@ -81,8 +76,8 @@
               src="../../../../assets/images/model3.png"
               alt="green quote"
             />
-            <p class="conteudo">{{ thought.content }}</p>
-            <p class="autoria"><b>{{ thought.authorship }}</b></p>
+            <p class="conteudo">{{ form.get('content')?.value }}</p>
+            <p class="autoria"><b>{{ form.get('authorship')?.value }}</b></p>
           </div>
         </div>
       </div>
