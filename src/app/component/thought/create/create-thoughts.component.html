@@ -13,6 +13,10 @@
         formControlName="content"
         placeholder="Type your thought"/>
 
+      <div class="error_msg" *ngIf="form.get('content')?.errors && form.get('content')?.touched">
+        Content is required
+      </div>
+
       <label for="author">Author</label>
       <input
         type="textarea"
@@ -20,6 +24,13 @@
         id="author"
         formControlName="authorship"
         placeholder="Type the author or font"/>
+
+      <div class="error_msg" *ngIf="form.get('authorship')?.errors?.['required'] && form.get('authorship')?.touched">
+        Authorship is required
+      </div>
+      <div class="error_msg" *ngIf="form.get('authorship')?.errors?.['minlength'] && form.get('authorship')?.touched">
+        Authorship has 3 as min length
+      </div>
 
       <label for="modelo">Select the model card:</label>
       <div class="container-radio">
