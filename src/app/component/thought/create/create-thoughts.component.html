@@ -94,7 +94,11 @@
       </div>
 
       <div class="actions">
-        <button (click)="createThought()"  class="botao">Save</button>
+        <button (click)="createThought()"
+          [disabled]="!form.valid"
+          [ngClass]="activeButton()">
+          Save
+        </button>
         <button (click)="cancelThought()" class="botao">Cancel</button>
       </div>
 

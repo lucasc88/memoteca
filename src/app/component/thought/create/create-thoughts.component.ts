@@ -30,7 +30,7 @@ export class CreateThoughtsComponent implements OnInit {
         Validators.minLength(3)
       ])],
       model: ['model1', [Validators.required]]
-    })
+    });
   }
 
   createThought(){
@@ -43,5 +43,12 @@ export class CreateThoughtsComponent implements OnInit {
 
   cancelThought(){
     this.router.navigate(['/listThoughts']);
+  }
+
+  activeButton(): string {
+    if(this.form.valid){
+      return 'botao';
+    }
+    return 'botao__desabilitado';
   }
 }
